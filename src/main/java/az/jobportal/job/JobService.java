@@ -1,4 +1,11 @@
 package az.jobportal.job;
 
-public class JobService {
+import java.util.List;
+
+public interface JobService {
+    List<Job> findAll();
+    Job findById(Long id);
+    void createJob(Job job);
+    boolean deleteJobById(Long id);
+    boolean updateJob(Long id, Job updatedJob);
 }
