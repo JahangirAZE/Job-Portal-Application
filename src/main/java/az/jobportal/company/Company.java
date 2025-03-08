@@ -1,6 +1,7 @@
 package az.jobportal.company;
 
 import az.jobportal.job.Job;
+import az.jobportal.review.Review;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
@@ -23,12 +24,19 @@ public class Company {
     @OneToMany(mappedBy = "company")
     private List<Job> jobs;
 
-    // TODO define reviews
-    // private List<Review> reviews;
-
+    @OneToMany(mappedBy = "company")
+    private List<Review> reviews;
 
     public Company() {
 
+    }
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
     }
 
     public Long getId() {
