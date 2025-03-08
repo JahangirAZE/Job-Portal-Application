@@ -12,7 +12,7 @@ import java.util.Optional;
 @Service
 public class JobServiceImpl implements JobService {
 
-    JobRepository jobRepository;
+    private final JobRepository jobRepository;
 
     @Autowired
     public JobServiceImpl(JobRepository jobRepository) {
